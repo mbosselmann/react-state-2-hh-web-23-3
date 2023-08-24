@@ -9,7 +9,7 @@ export default function SearchForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} autoComplete="off">
         <label htmlFor="searchTerm">Search term:</label>
         <input name="searchTerm" id="searchTerm" type="text" />
         <button>
