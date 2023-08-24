@@ -1,9 +1,12 @@
-export default function SearchForm() {
-  const searchTerm = "";
+import { useState } from "react";
 
+export default function SearchForm({ searchTerm, onSearch }) {
+  const [searchFieldValue, setSearchFieldValue] = useState("");
+
+  console.log(searchFieldValue);
   function handleSubmit(event) {
     event.preventDefault();
-
+    onSearch(searchFieldValue);
     console.log("submit");
   }
 
@@ -11,7 +14,13 @@ export default function SearchForm() {
     <>
       <form onSubmit={handleSubmit} autoComplete="off">
         <label htmlFor="searchTerm">Search term:</label>
-        <input name="searchTerm" id="searchTerm" type="text" />
+        <input
+          name="searchTerm"
+          id="searchTerm"
+          type="text"
+          value={searchFieldValue}
+          onChange={(event) => setSearchFieldValue(event.target.value)}
+        />
         <button>
           <span role="img" aria-label="search icon">
             🔍
