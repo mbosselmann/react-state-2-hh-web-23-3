@@ -11,7 +11,7 @@ export default function SearchForm() {
     <>
       <form onSubmit={handleSubmit}>
         <label htmlFor="searchTerm">Search term:</label>
-        <input name="searchTerm" id="searchTerm" />
+        <input name="searchTerm" id="searchTerm" type="text" />
         <button>
           <span role="img" aria-label="search icon">
             🔍
